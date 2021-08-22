@@ -1,0 +1,64 @@
+{
+  "name": "resource-router-middleware",
+  "version": "1.0.0",
+  "description": "Express REST resources as middleware",
+  "main": "dist/resource-router-middleware.js",
+  "types": "dist/resource-router-middleware.d.ts",
+  "scripts": {
+    "build": "tsup ./src/resource-router-middleware.ts --dts",
+    "prepare": "npm run build",
+    "test": "ava -v",
+    "bundle-size": "bundlesize",
+    "test:coverage": "nyc --reporter=lcov --reporter=text-summary npm test",
+    "type:coverage": "typescript-coverage-report",
+    "coverage": "npm run type:coverage && npm run test:coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OmgImAlexis/resource-router-middleware.git"
+  },
+  "author": "Alexis Tyler <xo@wvvw.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OmgImAlexis/resource-router-middleware/issues"
+  },
+  "homepage": "https://github.com/OmgImAlexis/resource-router-middleware",
+  "peerDependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/supertest": "^2.0.11",
+    "ava": "^3.15.0",
+    "bundlesize2": "^0.0.30",
+    "nyc": "^15.1.0",
+    "supertest": "^6.1.6",
+    "ts-node": "^10.2.1",
+    "tsup": "^4.14.0",
+    "typescript": "^4.3.5",
+    "typescript-coverage-report": "^0.6.0"
+  },
+  "bundlesize": [
+    {
+      "path": "./dist/resource-router-middleware.js",
+      "maxSize": "1 kB",
+      "compression": "gzip"
+    },
+    {
+      "path": "./dist/resource-router-middleware.js",
+      "maxSize": "2 kB",
+      "compression": "none"
+    }
+  ],
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  },
+  "typeCoverage": {
+    "atLeast": 100
+  }
+}
