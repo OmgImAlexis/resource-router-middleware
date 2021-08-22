@@ -1,20 +1,7 @@
-# resource-router-middleware
-
-> Express REST resources as middleware, mountable anywhere.
-
-
-## Installation
-
-```console
-npm i github:OmgImAlexis/resource-router-middleware
-```
-
-## Usage
-
-```ts
 import { randomUUID } from 'crypto';
 import express from 'express';
-import { createRouter } from 'resource-router-middleware';
+// import { createRouter } from 'resource-router-middleware';
+import { createRouter } from '../src/resource-router-middleware';
 
 interface User {
     id: string;
@@ -94,4 +81,3 @@ const listener = app.listen(port, () => {
     const binding = typeof address === 'string' ? `pipe/socket ${address}` : `port ${address.port}`;
     console.info('Server is listening on %s', binding);
 });
-```
